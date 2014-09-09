@@ -2,7 +2,6 @@ package com.company;
 
 import java.io.File;
 import java.util.*;
-import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Class with method to traverse directories.

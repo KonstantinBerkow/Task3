@@ -8,17 +8,24 @@ import java.util.List;
  */
 public class Main {
 
+    private static final String DEFAULT_DIR_PATH = "D:/Program Files";
+
     /**
      * Put path to initialDirectory which you want to traverse in args[]. Then content of this directory will be printed to console.
      *
      * @param args args[0] - path to directory which you want to traverse.
      */
     public static void main(String[] args) {
-        if (args == null) {
-            System.out.println("No arguments!");
-            return;
+        String dirPath;
+        if (args.length > 0) {
+            dirPath = args[0];
+            System.out.println("Proceeding to file " + dirPath);
+        } else {
+            dirPath = DEFAULT_DIR_PATH;
+            System.out.println("No arguments! Proceeding to default file " + dirPath);
         }
-        File initialDir = new File(args[0]);
+
+        File initialDir = new File(dirPath);
 
         if (!initialDir.exists()) {
             System.err.println("File does not exist!");
